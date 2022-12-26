@@ -32,13 +32,10 @@ function App() {
   }, [file]);
 
   const getVideoList = async () => {
-    const path = "C:\\workspace\\github\\file-upload\\upload";
-    axios
-      .get(`http://localhost:4000/file/file-name?path=${path}`)
-      .then((res) => {
-        console.log(res);
-        setFiles(res.data.fileList);
-      });
+    axios.get("http://localhost:4000/file/file-name").then((res) => {
+      console.log(res);
+      setFiles(res.data.fileList);
+    });
   };
 
   return (
